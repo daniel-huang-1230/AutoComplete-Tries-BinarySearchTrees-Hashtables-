@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4C0BCE511E36E8FF00CC7C72 /* DictionaryBST.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BCE4F1E36E8FF00CC7C72 /* DictionaryBST.cpp */; };
 		4C0BCE531E36F25600CC7C72 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BCE521E36F25600CC7C72 /* test.cpp */; };
+		4C0BCE5A1E36FB5100CC7C72 /* DictionaryHashtable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BCE541E36FB5100CC7C72 /* DictionaryHashtable.cpp */; };
+		4C0BCE5B1E36FB5100CC7C72 /* DictionaryTrie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BCE561E36FB5100CC7C72 /* DictionaryTrie.cpp */; };
+		4C0BCE5C1E36FB5100CC7C72 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BCE581E36FB5100CC7C72 /* util.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +31,12 @@
 		4C0BCE4F1E36E8FF00CC7C72 /* DictionaryBST.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DictionaryBST.cpp; path = ../../DictionaryBST.cpp; sourceTree = "<group>"; };
 		4C0BCE501E36E8FF00CC7C72 /* DictionaryBST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DictionaryBST.h; path = ../../DictionaryBST.h; sourceTree = "<group>"; };
 		4C0BCE521E36F25600CC7C72 /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = test.cpp; path = ../../test.cpp; sourceTree = "<group>"; };
+		4C0BCE541E36FB5100CC7C72 /* DictionaryHashtable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DictionaryHashtable.cpp; path = ../../DictionaryHashtable.cpp; sourceTree = "<group>"; };
+		4C0BCE551E36FB5100CC7C72 /* DictionaryHashtable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DictionaryHashtable.h; path = ../../DictionaryHashtable.h; sourceTree = "<group>"; };
+		4C0BCE561E36FB5100CC7C72 /* DictionaryTrie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DictionaryTrie.cpp; path = ../../DictionaryTrie.cpp; sourceTree = "<group>"; };
+		4C0BCE571E36FB5100CC7C72 /* DictionaryTrie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DictionaryTrie.h; path = ../../DictionaryTrie.h; sourceTree = "<group>"; };
+		4C0BCE581E36FB5100CC7C72 /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = util.cpp; path = ../../util.cpp; sourceTree = "<group>"; };
+		4C0BCE591E36FB5100CC7C72 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = util.h; path = ../../util.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +69,12 @@
 		4C0BCE471E36E8E200CC7C72 /* PA2 */ = {
 			isa = PBXGroup;
 			children = (
+				4C0BCE541E36FB5100CC7C72 /* DictionaryHashtable.cpp */,
+				4C0BCE551E36FB5100CC7C72 /* DictionaryHashtable.h */,
+				4C0BCE561E36FB5100CC7C72 /* DictionaryTrie.cpp */,
+				4C0BCE571E36FB5100CC7C72 /* DictionaryTrie.h */,
+				4C0BCE581E36FB5100CC7C72 /* util.cpp */,
+				4C0BCE591E36FB5100CC7C72 /* util.h */,
 				4C0BCE521E36F25600CC7C72 /* test.cpp */,
 				4C0BCE4F1E36E8FF00CC7C72 /* DictionaryBST.cpp */,
 				4C0BCE501E36E8FF00CC7C72 /* DictionaryBST.h */,
@@ -125,6 +140,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C0BCE511E36E8FF00CC7C72 /* DictionaryBST.cpp in Sources */,
+				4C0BCE5B1E36FB5100CC7C72 /* DictionaryTrie.cpp in Sources */,
+				4C0BCE5A1E36FB5100CC7C72 /* DictionaryHashtable.cpp in Sources */,
+				4C0BCE5C1E36FB5100CC7C72 /* util.cpp in Sources */,
 				4C0BCE531E36F25600CC7C72 /* test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,6 +270,7 @@
 				4C0BCE4E1E36E8E200CC7C72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

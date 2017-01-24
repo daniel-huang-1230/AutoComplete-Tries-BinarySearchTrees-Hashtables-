@@ -3,10 +3,19 @@
  *  Authors: Jor-el Briones, Christine Alvarado
  */
 
+/**
+ * Name: Daniel Huang
+ * Date: 1/23/2017
+ * Assignment: PA2
+ * Header file that contains constructors and function declarations
+ */
+
 #ifndef DICTIONARY_HASHTABLE_H
 #define DICTIONARY_HASHTABLE_H
 
 #include <string>
+#include <unordered_set>
+using namespace std; // using std namespace for cleaner codes
 
 /**
  *  The class for a dictionary ADT, implemented as a Hashtable
@@ -33,6 +42,7 @@ public:
 
 private:
   // Add your own data members and methods here
+    unordered_set<string> dict; //the unordered set from C++ std that would store strings
 };
 
 #endif // DICTIONARY_HASHTABLE_H

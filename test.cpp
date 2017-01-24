@@ -10,6 +10,11 @@
 #define LETTERS 26
 using namespace std;
 
+/**
+ * Name: Daniel Huang
+ * Date: 1/23/2017
+ * Assignment: PA2
+ */
 
 int main(int argc, char** argv)
 {

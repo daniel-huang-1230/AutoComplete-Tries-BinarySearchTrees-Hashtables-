@@ -10,6 +10,12 @@
 #include <string>
 
 /**
+ * Name: Daniel Huang
+ * Date: 1/23/2017
+ * Assignment: PA2
+ */
+
+/**
  *  The class for a dictionary ADT, implemented as a trie
  *  You may implement this class as either a mulit-way trie
  *  or a ternary search trie, but you must use one or the other.

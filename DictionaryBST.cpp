@@ -35,3 +35,5 @@ bool DictionaryBST::find(std::string word) const
 
 /* Destructor */
 DictionaryBST::~DictionaryBST(){}
+//just use the default (trivial) destructor
+

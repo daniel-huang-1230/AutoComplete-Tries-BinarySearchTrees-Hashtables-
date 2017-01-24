@@ -7,6 +7,7 @@
  * Name: Daniel Huang
  * Date: 1/23/2017
  * Assignment: PA2
+ *  Header file that contains constructors and function declarations
  */
 
 
@@ -42,7 +43,7 @@ public:
 
 private:
   // Add your own data members and methods here
-    set<string> dict;  //the std::set that will store strings 
+    set<string> dict;  //the set from C++ std that will store strings 
     
 };
 

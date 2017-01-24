@@ -9,6 +9,11 @@
 
 using std::istream;
 
+/**
+ * Name: Daniel Huang
+ * Date: 1/23/2017
+ * Assignment: PA2
+ */
 class Timer{
 private:
   std::chrono::time_point<std::chrono::high_resolution_clock> start;

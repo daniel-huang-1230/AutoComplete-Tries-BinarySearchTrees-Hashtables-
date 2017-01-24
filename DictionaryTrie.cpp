@@ -1,6 +1,11 @@
 #include "util.h"
 #include "DictionaryTrie.h"
 
+/**
+ * Name: Daniel Huang
+ * Date: 1/23/2017
+ * Assignment: PA2
+ */
 /* Create a new Dictionary that uses a Trie back end */
 DictionaryTrie::DictionaryTrie(){}
 
