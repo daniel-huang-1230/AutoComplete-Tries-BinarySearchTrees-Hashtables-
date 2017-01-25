@@ -6,8 +6,27 @@
  * Date: 1/23/2017
  * Assignment: PA2
  */
+
+
+/*the helper functions from the Node class to return the child node*/
+Node* Node:: findChild(char c){
+    
+    for(int i=0; i<children.size();i++){
+        Node* temp=children.at(i);
+        if(temp->content()==c){
+            
+            return temp; //the character is found
+        }
+    }
+    return NULL;  //character not found
+}
+
+
+
 /* Create a new Dictionary that uses a Trie back end */
-DictionaryTrie::DictionaryTrie(){}
+DictionaryTrie::DictionaryTrie(){
+    root=new Node(); // initialize the root node
+}
 
 /* Insert a word with its frequency into the dictionary.
  * Return true if the word was inserted, and false if it
@@ -15,12 +34,58 @@ DictionaryTrie::DictionaryTrie(){}
  * invalid (empty string) */
 bool DictionaryTrie::insert(std::string word, unsigned int freq)
 {
-  return false;
+    Node* curr = root; //set the curr to root first
+    
+    if(word.length()==0||find(word)){ //if trying to insert an empty string
+        return false; //or the word is already present, so return false
+    }
+    
+    
+    //ready to insert
+    for(int i=0;i<word.length();i++) {
+        Node* child = curr->findChild(word[i]);
+        if(child!=NULL){ //the character is already in the  dictionary
+            curr=child; //traverse to the child node
+        }
+        else { //character not in the dictionary
+            Node* temp=new Node();
+            temp->setContent(word[i]); //set the character
+            curr->addChild(temp); //add the node
+            curr=temp; //update the curr node ptr
+        }
+        if(i==word.length()-1) {
+            //when we have reach the last character of the word
+            curr->setWordNode(); //label the curr node as word node
+        }
+        
+    }
+    
+  return true;  //successful insertion
 }
 
 /* Return true if word is in the dictionary, and false otherwise */
 bool DictionaryTrie::find(std::string word) const
 {
+    Node* curr=root; //set the curr ptr to root
+    while(curr!=NULL) {
+        for(int i=0;i<word.length();i++){
+            Node* temp=curr->findChild(word[i]);
+            if(temp==NULL){
+                return false; //return immediately if any character
+                              // is not present
+            }
+            curr=temp; //update curr ptr
+        }
+        if(curr->wordNode()){
+            return true; //only return true when reaching word node
+        }
+        else{
+            return false;
+        }
+        
+        
+    }
+    
   return false;
 }
 
@@ -41,4 +106,9 @@ std::vector<std::string> DictionaryTrie::predictCompletions(std::string prefix, 
 }
 
 /* Destructor */
-DictionaryTrie::~DictionaryTrie(){}
+DictionaryTrie::~DictionaryTrie(){
+
+
+//TODO ----delete all dynamically allocated memory
+
+}

@@ -8,7 +8,7 @@
 
 #include <vector>
 #include <string>
-
+using namespace std;  // use namespace for cleaner codes
 /**
  * Name: Daniel Huang
  * Date: 1/23/2017
@@ -21,6 +21,41 @@
  *  or a ternary search trie, but you must use one or the other.
  *
  */
+
+// The following is the Node class created in order to implement trie
+class Node {
+public:
+    Node(){wordChar=' '; word=false;};  // Node constructor
+    //notice the root is initialized with a space character
+    
+    ~Node() {} //the destructor
+    
+    char content() {return wordChar; } //getter that returns the character
+    // in the node
+    void setContent(char c){wordChar=c; } //setter
+    
+    bool wordNode() { return word; } // check if the node is a word node
+    
+    void setWordNode() { word=true; } // label a node as a word node
+    
+    Node* findChild(char c);  //implemented in .cpp file
+    
+    void addChild(Node* child) { children.push_back(child); }
+    //append a new node to the vector(container)
+    
+    vector<Node*> getChildren() { return children;} //getter that returns
+    // the children vector
+    
+private:
+    char wordChar; //the character stored on the edge pointing to the
+    // node(technically it's stored IN the node here)
+    bool word = false;  // Node's "word" label
+    
+    vector<Node*> children; //use vector to store all the children nodes
+    //in order to keep track of all the edges
+    
+};
+
 class DictionaryTrie
 {
 public:
@@ -37,6 +72,7 @@ public:
   /* Return true if word is in the dictionary, and false otherwise */
   bool find(std::string word) const;
 
+    
   /* Return up to num_completions of the most frequent completions
    * of the prefix, such that the completions are words in the dictionary.
    * These completions should be listed from most frequent to least.
@@ -53,8 +89,17 @@ public:
   /* Destructor */
   ~DictionaryTrie();
 
+    
 private:
   // Add your own data members and methods here
+    Node* root; //node pointer pointing to the root
 };
+
+
+
+
+
+
+
 
 #endif // DICTIONARY_TRIE_H
