@@ -52,7 +52,7 @@ private:
     bool word = false;  // Node's "word" label
     
     vector<Node*> children; //use vector to store all the children nodes
-    //in order to keep track of all the edges
+    //in order to keep track of all the edges pointing from one node
     
 };
 

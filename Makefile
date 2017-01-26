@@ -21,5 +21,5 @@ DictionaryHashtable.o: DictionaryHashtable.h
 util.o: util.h
 
 clean:
-	rm -f test *.o core* *~
+	rm -f test *.o *.gch core* *~
 

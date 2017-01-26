@@ -8,7 +8,7 @@
  */
 
 
-/*the helper functions from the Node class to return the child node*/
+/*the helper functions from the Node class to return the child node ptr*/
 Node* Node:: findChild(char c){
     
     for(int i=0; i<children.size();i++){
@@ -66,7 +66,7 @@ bool DictionaryTrie::insert(std::string word, unsigned int freq)
 /* Return true if word is in the dictionary, and false otherwise */
 bool DictionaryTrie::find(std::string word) const
 {
-    Node* curr=root; //set the curr ptr to root
+    Node* curr=root; //start from the root
     while(curr!=NULL) {
         for(int i=0;i<word.length();i++){
             Node* temp=curr->findChild(word[i]);
@@ -76,6 +76,7 @@ bool DictionaryTrie::find(std::string word) const
             }
             curr=temp; //update curr ptr
         }
+        //finished while loop
         if(curr->wordNode()){
             return true; //only return true when reaching word node
         }
