@@ -10,6 +10,8 @@
 #define LETTERS 26
 using namespace std;
 
+
+
 /**
  * Name: Daniel Huang
  * Date: 1/23/2017
@@ -106,10 +108,105 @@ int main(int argc, char** argv)
 /*You are supposed to add more test cases in this file */
 
     //test inserting empty world
+    t_bst = d_bst.insert("");
+    t_ht = d_ht.insert("");
+    tt = dt.insert("", 0);
     
+    //should not be inserted into any of these data structures
+        if(tt)
+    {
+        cout << "failed for DictionaryTrie... ";
+    }
+    if(!tt)
+    {
+        cout << "PASSED the check for inserting empty string into Trie :D ";
+        cout << endl;
+    }
+
     
+    //corner case where there is only one word in the dictionary
+    DictionaryBST d_bst2;
+    DictionaryHashtable d_ht2;
+    DictionaryTrie dt2;
+    if(d_bst2.find("apple"))
+       {
+           cout<<"the dictionary should be empty"<<endl;
+       }
     
+    if(d_ht2.find("apple"))
+    {
+        cout<<"the dictionary should be empty"<<endl;
+    }
+    if(dt2.find("apple"))
+    {
+        cout<<"the dictionary should be empty"<<endl;
+    }
     
+    cout<<"Passed the empty dictionary test :D"<<endl;
+   
+   
+    //test the find() function with a small set of words
+
+    vector<std::string> words2;
+    words2.push_back("Daniel");
+    words2.push_back("Johnny");
+    words2.push_back("Alice/Claire");
+    words2.push_back("Ramon");
+    
+    wit = words2.begin();
+    wen = words2.end();
+    for(; wit != wen; ++wit)
+    {
+        cout << "Inserting: \"" << *wit << "\"... ";
+        t_bst = d_bst2.insert(*wit);
+        t_ht = d_ht2.insert(*wit);
+        tt = dt2.insert(*wit, 0);
+        if(!t_bst)
+        {
+            cout << "failed for DictionaryBST... ";
+        }
+        if(!t_ht)
+        {
+            cout << "failed for DictionaryHashset... ";
+        }
+        if(!tt)
+        {
+            cout << "failed for DictionaryTrie... ";
+        }
+        if(t_bst && t_ht && tt)
+        {
+            cout<< "inserting "<<*wit<< " success!"<<endl;
+                   }
+        cout << endl;
+    }
+    
+    cout << "Now proceed to test find()! :D "<<endl;
+
+    wit = words2.begin();
+    wen = words2.end();
+    for(;wit!=wen;++wit){
+        cout<<"Searching: \""<<*wit<<"\"...";
+        if(!d_bst2.find(*wit)){
+            cout<< "Failed to find "<<*wit<<"in DictionaryBST...";
+        }
+        if(!d_ht2.find(*wit)){
+            cout<< "Failed to find "<<*wit<<"in DictionaryHashset...";
+        }
+        if(!dt2.find(*wit)){
+            cout<< "Failed to find "<<*wit<<"in DictionaryTrIe...";
+            
+        }
+        
+        
+        else {
+            cout<<*wit<<" FOUND. PASSED! :D"<<endl;
+        }
+        cout<<endl;
+    }
+
+    
+//use the util.cpp functions to load dictionarys to my data structures(TODO)
+   
     
     
     
