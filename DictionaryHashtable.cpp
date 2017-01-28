@@ -17,6 +17,9 @@ DictionaryHashtable::DictionaryHashtable(){
 /* Insert a word into the dictionary. */
 bool DictionaryHashtable::insert(std::string word)
 {
+    if(word==""){
+        return false; //if inserting empty string, return false
+    }
      return get<1>(dict.insert(word)); //get the bool value from the pair and return
 }
 

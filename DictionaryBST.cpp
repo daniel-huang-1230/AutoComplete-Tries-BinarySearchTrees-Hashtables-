@@ -19,6 +19,9 @@ DictionaryBST::DictionaryBST(){
 /* Insert a word into the dictionary. */
 bool DictionaryBST::insert(std::string word)
 {
+    if(word==""){
+        return false; //if inserting empty string, return false
+    }
    
     return get<1>(dict.insert(word)); //get the bool value from the pair and return
 }
@@ -26,6 +29,7 @@ bool DictionaryBST::insert(std::string word)
 /* Return true if word is in the dictionary, and false otherwise */
 bool DictionaryBST::find(std::string word) const
 {
+    
     if(dict.find(word)!=dict.end()){
         return true; //word found!
         

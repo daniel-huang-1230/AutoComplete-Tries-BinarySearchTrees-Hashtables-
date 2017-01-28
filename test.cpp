@@ -204,6 +204,23 @@ int main(int argc, char** argv)
         cout<<endl;
     }
 
+    //test for inserting empty string and searching for empty string
+    if(d_bst.insert("")||d_ht.insert("")||dt.insert("",0)){
+        cout<< "Failed to identify the case of inserting empty string"<<endl;
+        
+    }
+    
+    
+    else if(d_bst.find("")||d_ht.find("")||dt.find("")){
+        cout<< "Failed to identify the case of searching empty string"<<endl;
+        
+    }
+    else{
+        cout<<"Passed both tests for checking empty string :D"<<endl;
+    }
+    
+
+    
     
 //use the util.cpp functions to load dictionarys to my data structures(TODO)
    
