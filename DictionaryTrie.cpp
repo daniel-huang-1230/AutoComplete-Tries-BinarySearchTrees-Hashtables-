@@ -114,11 +114,12 @@ void DictionaryTrie::deleteAll(Node* n){
         delete n;
         return;
     }
-    else{
+    
         for(int i=0;i<n->getChildren().size();i++){
             deleteAll(n->getChildren()[i]);
+            
         }
-    }
+    delete n;
 }
 
 /* Destructor */
