@@ -102,14 +102,30 @@ bool DictionaryTrie::find(std::string word) const
  */
 std::vector<std::string> DictionaryTrie::predictCompletions(std::string prefix, unsigned int num_completions)
 {
+    
+    //HINTS: 1. BST(C++ set) 2. C++ pairs
   std::vector<std::string> words;
   return words;
+}
+
+
+void DictionaryTrie::deleteAll(Node* n){
+    if(n->getChildren().size()==0) {
+        delete n;
+        return;
+    }
+    else{
+        for(int i=0;i<n->getChildren().size();i++){
+            deleteAll(n->getChildren()[i]);
+        }
+    }
 }
 
 /* Destructor */
 DictionaryTrie::~DictionaryTrie(){
 
-
-//TODO ----delete all dynamically allocated memory
+    deleteAll(root);
+    
+//---delete all dynamically allocated memory
 
 }

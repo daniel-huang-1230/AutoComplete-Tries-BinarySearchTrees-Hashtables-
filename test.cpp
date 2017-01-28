@@ -104,6 +104,15 @@ int main(int argc, char** argv)
 
   
 /*You are supposed to add more test cases in this file */
-  
+
+    //test inserting empty world
+    
+    
+    
+    
+    
+    
+    
+    
   return 0;
 }

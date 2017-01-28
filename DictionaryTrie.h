@@ -89,6 +89,7 @@ public:
   /* Destructor */
   ~DictionaryTrie();
 
+   void  deleteAll(Node* n); //helper method for destructor
     
 private:
   // Add your own data members and methods here

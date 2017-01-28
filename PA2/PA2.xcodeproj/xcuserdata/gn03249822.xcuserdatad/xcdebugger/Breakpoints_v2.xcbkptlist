@@ -30,9 +30,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "11"
-            endingLineNumber = "11"
-            landmarkName = "Node:: findChild(char c)"
-            landmarkType = "7">
+            endingLineNumber = "11">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
