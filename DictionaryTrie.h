@@ -52,12 +52,16 @@ public:
     vector<Node*> getChildren() { return children;} //getter that returns
     // the children vector
     
+    std::string wordStr=""; //used to keep track of the concatenation of characters
+    
 private:
     char wordChar; //the character stored on the edge pointing to the
     // node(technically it's stored IN the node here)
     bool word = false;  // Node's "word" label
     
     int freq=0; //initialize the frequency to 0
+    
+    
     
     vector<Node*> children; //use vector to store all the children nodes
     //in order to keep track of all the edges pointing from one node
@@ -105,8 +109,7 @@ private:
     
       
     //the private method that performs DFS
-    void DFS(Node* start, DictionaryTrie dict,
-             std::set<std::pair<std::string, unsigned int>> freqSet);
+    void DFS(Node* start,std::set<std::pair<std::string, unsigned int>> freqSet);
 };
 
 

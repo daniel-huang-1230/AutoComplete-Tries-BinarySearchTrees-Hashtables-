@@ -52,6 +52,12 @@ bool DictionaryTrie::insert(std::string word, unsigned int freq)
             temp->setContent(word[i]); //set the character
             curr->addChild(temp); //add the node
             curr=temp; //update the curr node ptr
+            
+            
+            curr->wordStr+=curr->content(); //keep track of all characters in the
+            //nodes
+            
+            
         }
         if(i==word.length()-1) {
             //when we have reach the last character of the word
@@ -61,7 +67,7 @@ bool DictionaryTrie::insert(std::string word, unsigned int freq)
         
     }
     
-  return true;  //successful insertion
+    return true;  //successful insertion
 }
 
 /* Return true if word is in the dictionary, and false otherwise */
@@ -73,7 +79,7 @@ bool DictionaryTrie::find(std::string word) const
             Node* temp=curr->findChild(word[i]);
             if(temp==NULL){
                 return false; //return immediately if any character
-                              // is not present
+                // is not present
             }
             curr=temp; //update curr ptr
         }
@@ -88,7 +94,7 @@ bool DictionaryTrie::find(std::string word) const
         
     }
     
-  return false;
+    return false;
 }
 
 /* Return up to num_completions of the most frequent completions
@@ -104,7 +110,7 @@ bool DictionaryTrie::find(std::string word) const
 std::vector<std::string> DictionaryTrie::predictCompletions(std::string prefix, unsigned int num_completions)
 {
     std::vector<std::string> empty = std::vector<std::string>(); //empty vector
-
+    
     Node* curr= root; //start from the root
     
     if(prefix==""||curr==NULL) {
@@ -127,34 +133,58 @@ std::vector<std::string> DictionaryTrie::predictCompletions(std::string prefix, 
     //now we've travered to the last character of the prefix, ready to search
     //for completions
     
-    std:: set<std::pair<std::string, unsigned int>> freqSet= std:: set<std::pair<std::string, unsigned int>>(); //instantiate a set (BST) to store the word pair
-   
+    std:: set<std::pair<std::string, unsigned int>> freqSet= std:: set<std::pair<std::string, unsigned int>>();
+    //instantiate a set (BST) to store the word pair
+    
+    this->DFS(curr,freqSet); //call DFS
     
     
+    std:: set<std::pair<std::string, unsigned int>>::iterator it=freqSet.begin();
     
-    
-    
-    
-    
-    
-    
-    
-    
-  std::vector<std::string> words;
-  return words;
-}
+    std:: set<std::pair<std::string, unsigned int>>::iterator en=freqSet.end();
 
-//the private method that performs DFS
-void DFS(Node* start, DictionaryTrie dict,
-         std::set<std::pair<std::string, unsigned int>> freqSet){
     
-    
-    //for each of start's children
-    for(int i=0;i<start->getChildren().size();i++){
+    while(it!=end){
         
     }
     
+    
+    
+    
+    
+    
+    std::vector<std::string> words;
+    return words;
 }
+
+//the private method that performs DFS
+void DFS(Node* start,std::set<std::pair<std::string, unsigned int>> freqSet){
+    
+    std::stack<Node *> stack= std::stack<Node *>(); //initialize the stack
+    stack.push(start);
+    Node* curr=start;
+    while(!stack.empty()){
+        
+        stack.pop();
+        if(curr->wordNode()){
+            std::pair<std::string, unsigned int> wordPair;
+            wordPair=make_pair(curr->wordStr, curr->getFreq()); //construct the pair
+            
+            freqSet.insert(wordPair); //insert the pair into the BST
+        }
+        for(int i=0;i<curr->getChildren().size();i++){
+            stack.push(curr->getChildren()[i]); //push each children into the stack
+        }
+        curr=stack.top(); //point to the top of the stack
+    }
+    //done searching
+    
+}
+
+
+
+
+
 
 
 // the helper method that would delete all node pointers in the trie
@@ -164,18 +194,18 @@ void DictionaryTrie::deleteAll(Node* n){
         return;
     }
     
-        for(int i=0;i<n->getChildren().size();i++){
-            deleteAll(n->getChildren()[i]);
-            
-        }
+    for(int i=0;i<n->getChildren().size();i++){
+        deleteAll(n->getChildren()[i]);
+        
+    }
     delete n;
 }
 
 /* Destructor */
 DictionaryTrie::~DictionaryTrie(){
-
+    
     deleteAll(root);
     
-//---delete all dynamically allocated memory
-
+    //---delete all dynamically allocated memory
+    
 }
