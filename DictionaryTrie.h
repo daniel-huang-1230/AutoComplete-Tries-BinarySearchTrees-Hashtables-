@@ -8,6 +8,8 @@
 
 #include <vector>
 #include <string>
+#include <set>
+#include <stack>
 using namespace std;  // use namespace for cleaner codes
 /**
  * Name: Daniel Huang
@@ -38,6 +40,10 @@ public:
     
     void setWordNode() { word=true; } // label a node as a word node
     
+    void setFreq(unsigned int freq) { this->freq=freq; }
+    
+    int  getFreq() { return this->freq; } // the getter for the frequency of a word
+    
     Node* findChild(char c);  //implemented in .cpp file
     
     void addChild(Node* child) { children.push_back(child); }
@@ -50,6 +56,8 @@ private:
     char wordChar; //the character stored on the edge pointing to the
     // node(technically it's stored IN the node here)
     bool word = false;  // Node's "word" label
+    
+    int freq=0; //initialize the frequency to 0
     
     vector<Node*> children; //use vector to store all the children nodes
     //in order to keep track of all the edges pointing from one node
@@ -94,6 +102,11 @@ public:
 private:
   // Add your own data members and methods here
     Node* root; //node pointer pointing to the root
+    
+      
+    //the private method that performs DFS
+    void DFS(Node* start, DictionaryTrie dict,
+             std::set<std::pair<std::string, unsigned int>> freqSet);
 };
 
 

@@ -69,13 +69,13 @@
 		4C0BCE471E36E8E200CC7C72 /* PA2 */ = {
 			isa = PBXGroup;
 			children = (
-				4C5DAFF41E3C2BC400BD06E3 /* DictionaryHashtable.cpp */,
-				4C5DAFF51E3C2BC400BD06E3 /* DictionaryHashtable.h */,
-				4C5DAFF61E3C2BC400BD06E3 /* util.cpp */,
-				4C5DAFF71E3C2BC400BD06E3 /* util.h */,
 				4C0BCE561E36FB5100CC7C72 /* DictionaryTrie.cpp */,
 				4C0BCE571E36FB5100CC7C72 /* DictionaryTrie.h */,
+				4C5DAFF71E3C2BC400BD06E3 /* util.h */,
+				4C5DAFF61E3C2BC400BD06E3 /* util.cpp */,
 				4C0BCE521E36F25600CC7C72 /* test.cpp */,
+				4C5DAFF41E3C2BC400BD06E3 /* DictionaryHashtable.cpp */,
+				4C5DAFF51E3C2BC400BD06E3 /* DictionaryHashtable.h */,
 				4C0BCE4F1E36E8FF00CC7C72 /* DictionaryBST.cpp */,
 				4C0BCE501E36E8FF00CC7C72 /* DictionaryBST.h */,
 			);

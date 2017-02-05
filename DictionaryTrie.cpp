@@ -56,6 +56,7 @@ bool DictionaryTrie::insert(std::string word, unsigned int freq)
         if(i==word.length()-1) {
             //when we have reach the last character of the word
             curr->setWordNode(); //label the curr node as word node
+            curr->setFreq(freq); //set the frequency only at the word node
         }
         
     }
@@ -102,13 +103,61 @@ bool DictionaryTrie::find(std::string word) const
  */
 std::vector<std::string> DictionaryTrie::predictCompletions(std::string prefix, unsigned int num_completions)
 {
+    std::vector<std::string> empty = std::vector<std::string>(); //empty vector
+
+    Node* curr= root; //start from the root
     
-    //HINTS: 1. BST(C++ set) 2. C++ pairs
+    if(prefix==""||curr==NULL) {
+        //check for invalid input first(empty prefix) or empty trie
+        cout<<"Invalid Input. Please retry with correct input"<<endl;
+        return empty;
+    }
+    while(curr!=NULL){
+        for(int i=0; i<prefix.length();i++){
+            
+            Node* temp=curr->findChild(prefix[i]);
+            if(temp==NULL){
+                //if the character in the prefix is not in the dictionary trie
+                cout<<"Invalid Input. Please retry with correct input"<<endl;
+                return empty;
+            }
+            curr=temp; //update the curr node
+        }
+    }
+    //now we've travered to the last character of the prefix, ready to search
+    //for completions
+    
+    std:: set<std::pair<std::string, unsigned int>> freqSet= std:: set<std::pair<std::string, unsigned int>>(); //instantiate a set (BST) to store the word pair
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
   std::vector<std::string> words;
   return words;
 }
 
+//the private method that performs DFS
+void DFS(Node* start, DictionaryTrie dict,
+         std::set<std::pair<std::string, unsigned int>> freqSet){
+    
+    
+    //for each of start's children
+    for(int i=0;i<start->getChildren().size();i++){
+        
+    }
+    
+}
 
+
+// the helper method that would delete all node pointers in the trie
 void DictionaryTrie::deleteAll(Node* n){
     if(n->getChildren().size()==0) {
         delete n;
