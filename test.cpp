@@ -249,13 +249,20 @@ int main(int argc, char** argv)
 
   
     
-    ifstream in("freq1.txt");
+    ifstream in("smalldictionary.txt");
     
    
- //   Utils::stripFrequency(str);
-    Utils::load_dict(dict2, in);
+    Utils::load_dict(dict2, in); //load the words from the file stream to dict2
     
-    in.close();
+    in.seekg(0, in.beg);
+    std::vector<std::string> vec2=dict2.predictCompletions(prefix, 5);
+    for (std::vector<string>::const_iterator i = vec2.begin(); i != vec2.end(); ++i)
+    {
+        cout<< *i<<endl;
+    }
+    cout<<"Testing auto-complete with smalldictionary.txt success! :D"<<endl;
+    
+
     
   return 0;
 }
