@@ -3,9 +3,11 @@
 
 /**
  * Name: Daniel Huang
- * Date: 1/23/2017
+ * Date: 2/05/2017
  * Assignment: PA2
  */
+
+
 
 
 /*the helper functions from the Node class to return the child node ptr*/
@@ -97,6 +99,32 @@ bool DictionaryTrie::find(std::string word) const
     return false;
 }
 
+
+//the method that performs DFS, note I put the declaration and implementation
+//together in this cpp. file
+void DFS(Node* start,std::set<std::pair<unsigned int,std::string>> &freqSet){
+    
+    std::stack<Node *> stack= std::stack<Node *>(); //initialize the stack
+    stack.push(start);
+    Node* curr=start;
+    while(!stack.empty()){
+        
+        stack.pop();
+        if(curr->wordNode()){
+            std::pair< unsigned int, std::string> wordPair;
+            wordPair=make_pair(curr->getFreq(),curr->wordStr); //construct the pair
+            
+            freqSet.insert(wordPair); //insert the pair into the BST
+        }
+        for(int i=0;i<curr->getChildren().size();i++){
+            stack.push(curr->getChildren()[i]); //push each children into the stack
+        }
+        curr=stack.top(); //point to the top of the stack
+    }
+    //done searching
+    
+}
+
 /* Return up to num_completions of the most frequent completions
  * of the prefix, such that the completions are words in the dictionary.
  * These completions should be listed from most frequent to least.
@@ -109,14 +137,15 @@ bool DictionaryTrie::find(std::string word) const
  */
 std::vector<std::string> DictionaryTrie::predictCompletions(std::string prefix, unsigned int num_completions)
 {
-    std::vector<std::string> empty = std::vector<std::string>(); //empty vector
+    //vector initialized empty
+    std::vector<std::string> vec = std::vector<std::string>();
     
     Node* curr= root; //start from the root
     
     if(prefix==""||curr==NULL) {
         //check for invalid input first(empty prefix) or empty trie
         cout<<"Invalid Input. Please retry with correct input"<<endl;
-        return empty;
+        return vec;
     }
     while(curr!=NULL){
         for(int i=0; i<prefix.length();i++){
@@ -125,7 +154,7 @@ std::vector<std::string> DictionaryTrie::predictCompletions(std::string prefix, 
             if(temp==NULL){
                 //if the character in the prefix is not in the dictionary trie
                 cout<<"Invalid Input. Please retry with correct input"<<endl;
-                return empty;
+                return vec;
             }
             curr=temp; //update the curr node
         }
@@ -133,53 +162,39 @@ std::vector<std::string> DictionaryTrie::predictCompletions(std::string prefix, 
     //now we've travered to the last character of the prefix, ready to search
     //for completions
     
-    std:: set<std::pair<std::string, unsigned int>> freqSet= std:: set<std::pair<std::string, unsigned int>>();
+    std:: set<std::pair<unsigned int, std::string>> freqSet= std:: set<std::pair<unsigned int,std::string>>();
     //instantiate a set (BST) to store the word pair
     
-    this->DFS(curr,freqSet); //call DFS
+    DFS(curr,freqSet); //call DFS
     
     
-    std:: set<std::pair<std::string, unsigned int>>::iterator it=freqSet.begin();
     
-    std:: set<std::pair<std::string, unsigned int>>::iterator en=freqSet.end();
-
     
-    while(it!=end){
+    //return an iterator pointing to the last object in the set
+    std:: set<std::pair<unsigned int, std::string>>::reverse_iterator ite=freqSet.rbegin();
+    
+    
+    if(freqSet.size()<num_completions) {  //if there are fewer completions than
+                                          //num_completions
+        for(int i=0; i<freqSet.size();i++) {
+            vec.push_back((*ite).second);
+            ite ++;
+                    }
         
     }
     
-    
-    
-    
-    
-    
-    std::vector<std::string> words;
-    return words;
+    else{
+        //num_completions
+        for(int i=0; i<num_completions;i++) {
+            vec.push_back((*ite).second);
+            ite ++;
+        }
+    }
+   
+    return vec; //return the final vector containing the words with top n_complemetion
+                //frequencies
 }
 
-//the private method that performs DFS
-void DFS(Node* start,std::set<std::pair<std::string, unsigned int>> freqSet){
-    
-    std::stack<Node *> stack= std::stack<Node *>(); //initialize the stack
-    stack.push(start);
-    Node* curr=start;
-    while(!stack.empty()){
-        
-        stack.pop();
-        if(curr->wordNode()){
-            std::pair<std::string, unsigned int> wordPair;
-            wordPair=make_pair(curr->wordStr, curr->getFreq()); //construct the pair
-            
-            freqSet.insert(wordPair); //insert the pair into the BST
-        }
-        for(int i=0;i<curr->getChildren().size();i++){
-            stack.push(curr->getChildren()[i]); //push each children into the stack
-        }
-        curr=stack.top(); //point to the top of the stack
-    }
-    //done searching
-    
-}
 
 
 

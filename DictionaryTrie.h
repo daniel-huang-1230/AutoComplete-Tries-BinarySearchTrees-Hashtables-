@@ -84,7 +84,7 @@ public:
   /* Return true if word is in the dictionary, and false otherwise */
   bool find(std::string word) const;
 
-    
+   
   /* Return up to num_completions of the most frequent completions
    * of the prefix, such that the completions are words in the dictionary.
    * These completions should be listed from most frequent to least.
@@ -108,9 +108,7 @@ private:
     Node* root; //node pointer pointing to the root
     
       
-    //the private method that performs DFS
-    void DFS(Node* start,std::set<std::pair<std::string, unsigned int>> freqSet);
-};
+    };
 
 
 
