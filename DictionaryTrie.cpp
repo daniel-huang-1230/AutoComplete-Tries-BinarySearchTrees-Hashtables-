@@ -47,17 +47,22 @@ bool DictionaryTrie::insert(std::string word, unsigned int freq)
     for(int i=0;i<word.length();i++) {
         Node* child = curr->findChild(word[i]);
         if(child!=NULL){ //the character is already in the  dictionary
+        
             curr=child; //traverse to the child node
+            
         }
         else { //character not in the dictionary
             Node* temp=new Node();
             temp->setContent(word[i]); //set the character
             curr->addChild(temp); //add the node
+            
+            //keep track of all characters in the
+            //nodes
+            temp->wordStr=curr->wordStr + temp->content();
+            
             curr=temp; //update the curr node ptr
             
             
-            curr->wordStr+=curr->content(); //keep track of all characters in the
-            //nodes
             
             
         }
@@ -100,9 +105,9 @@ bool DictionaryTrie::find(std::string word) const
 }
 
 
-//the method that performs DFS, note I put the declaration and implementation
-//together in this cpp. file
-void DFS(Node* start,std::set<std::pair<unsigned int,std::string>> &freqSet){
+
+/*The implementation of the private DFS method*/
+void DictionaryTrie::DFS(Node* start,std::set<std::pair<unsigned int,std::string>> &freqSet){
     
     std::stack<Node *> stack= std::stack<Node *>(); //initialize the stack
     stack.push(start);
@@ -119,7 +124,8 @@ void DFS(Node* start,std::set<std::pair<unsigned int,std::string>> &freqSet){
         for(int i=0;i<curr->getChildren().size();i++){
             stack.push(curr->getChildren()[i]); //push each children into the stack
         }
-        curr=stack.top(); //point to the top of the stack
+        if(!stack.empty()) {
+            curr=stack.top(); }//point to the top of the stack
     }
     //done searching
     
@@ -147,21 +153,23 @@ std::vector<std::string> DictionaryTrie::predictCompletions(std::string prefix, 
         cout<<"Invalid Input. Please retry with correct input"<<endl;
         return vec;
     }
-    while(curr!=NULL){
+    
         for(int i=0; i<prefix.length();i++){
             
             Node* temp=curr->findChild(prefix[i]);
-            if(temp==NULL){
+           if(temp==NULL){
                 //if the character in the prefix is not in the dictionary trie
                 cout<<"Invalid Input. Please retry with correct input"<<endl;
                 return vec;
             }
             curr=temp; //update the curr node
         }
-    }
+    
     //now we've travered to the last character of the prefix, ready to search
     //for completions
-    
+    if(find(prefix)){
+        
+    }
     std:: set<std::pair<unsigned int, std::string>> freqSet= std:: set<std::pair<unsigned int,std::string>>();
     //instantiate a set (BST) to store the word pair
     
@@ -191,10 +199,11 @@ std::vector<std::string> DictionaryTrie::predictCompletions(std::string prefix, 
         }
     }
    
+       
     return vec; //return the final vector containing the words with top n_complemetion
-                //frequencies
-}
+    //frequencies
 
+}
 
 
 

@@ -224,7 +224,18 @@ int main(int argc, char** argv)
     
 //use the util.cpp functions to load dictionarys to my data structures(TODO)
    
+    DictionaryTrie dict =DictionaryTrie();
+    std::string a="att";
+    std::string b="ate";
     
+    std::string prefix="at";
+    dict.insert(a,5);
+    dict.insert(b,4);
+    std::vector<std::string> vec=dict.predictCompletions(prefix, 3);
+    for (std::vector<string>::const_iterator i = vec.begin(); i != vec.end(); ++i)
+    {
+        cout<< *i<<endl;
+    }
     
     
     

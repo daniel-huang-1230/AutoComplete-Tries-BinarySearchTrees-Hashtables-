@@ -53,6 +53,8 @@ public:
     // the children vector
     
     std::string wordStr=""; //used to keep track of the concatenation of characters
+
+    
     
 private:
     char wordChar; //the character stored on the edge pointing to the
@@ -107,6 +109,8 @@ private:
   // Add your own data members and methods here
     Node* root; //node pointer pointing to the root
     
+    
+    void DFS(Node* start,std::set<std::pair<unsigned int,std::string>> &freqSet);
       
     };
 
