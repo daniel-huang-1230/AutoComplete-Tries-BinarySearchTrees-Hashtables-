@@ -27,7 +27,7 @@ using namespace std;  // use namespace for cleaner codes
 // The following is the Node class created in order to implement trie
 class Node {
 public:
-    Node(){wordChar=' '; word=false;};  // Node constructor
+    Node(){ wordChar=' '; word=false;};  // Node constructor
     //notice the root is initialized with a space character
     
     ~Node() {} //the destructor
@@ -53,6 +53,8 @@ public:
     // the children vector
     
     std::string wordStr=""; //used to keep track of the concatenation of characters
+                            
+    
 
     
     
@@ -63,9 +65,7 @@ private:
     
     int freq=0; //initialize the frequency to 0
     
-    
-    
-    vector<Node*> children; //use vector to store all the children nodes
+     vector<Node*> children; //use vector to store all the children nodes
     //in order to keep track of all the edges pointing from one node
     
 };

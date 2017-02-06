@@ -1,4 +1,5 @@
 #include<iostream>
+#include <fstream>
 #include<string>
 #include<algorithm>
 #include<set>
@@ -219,25 +220,42 @@ int main(int argc, char** argv)
         cout<<"Passed both tests for checking empty string :D"<<endl;
     }
     
+    cout<<endl;
+    
+    
 
-    
-    
-//use the util.cpp functions to load dictionarys to my data structures(TODO)
    
+    
+    //first test with a small group of words
     DictionaryTrie dict =DictionaryTrie();
     std::string a="att";
     std::string b="ate";
+    std::string c="aaaaaa";
     
-    std::string prefix="at";
+    std::string prefix="a";
     dict.insert(a,5);
     dict.insert(b,4);
-    std::vector<std::string> vec=dict.predictCompletions(prefix, 3);
+    dict.insert(c,9);
+    std::vector<std::string> vec=dict.predictCompletions(prefix, 10);
     for (std::vector<string>::const_iterator i = vec.begin(); i != vec.end(); ++i)
     {
         cout<< *i<<endl;
     }
+    cout<<"Testing auto-complete with a small groups of word success! :D"<<endl;
     
     
+    //use the util.cpp functions to load dictionarys to my data structures
+    DictionaryTrie dict2 =DictionaryTrie();
+
+  
+    
+    ifstream in("freq1.txt");
+    
+   
+ //   Utils::stripFrequency(str);
+    Utils::load_dict(dict2, in);
+    
+    in.close();
     
   return 0;
 }

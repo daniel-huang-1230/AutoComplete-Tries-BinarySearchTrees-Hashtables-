@@ -40,11 +40,14 @@ private:
 	 * be a numeric frequency and the rest of the line is a word
 	 * or phrase.
 	 */
-	unsigned static int stripFrequency(std::string& line);
+	//unsigned static int stripFrequency(std::string& line);
     
     
     
 public:
+    //for testing purposes
+    unsigned static int stripFrequency(std::string& line);
+
     /*
      * Load the words in the stream into the dictionary
      */

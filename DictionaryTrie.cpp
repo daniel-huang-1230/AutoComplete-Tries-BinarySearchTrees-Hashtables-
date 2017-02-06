@@ -56,13 +56,9 @@ bool DictionaryTrie::insert(std::string word, unsigned int freq)
             temp->setContent(word[i]); //set the character
             curr->addChild(temp); //add the node
             
-            //keep track of all characters in the
-            //nodes
             temp->wordStr=curr->wordStr + temp->content();
             
             curr=temp; //update the curr node ptr
-            
-            
             
             
         }
