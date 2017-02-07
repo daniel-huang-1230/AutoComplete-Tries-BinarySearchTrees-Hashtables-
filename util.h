@@ -57,7 +57,7 @@ public:
     /*
      * Load num_words from words stream into the dictionary
      */
-    void static load_dict(DictionaryBST& dict, istream& words, unsigned int num_words);
+    int static load_dict(DictionaryBST& dict, istream& words, unsigned int num_words);
     
     /*
      * Load the words in the file into the dictionary
@@ -67,7 +67,7 @@ public:
     /*
      * Load num_words from words stream into the dictionary
      */
-    void static load_dict(DictionaryHashtable& dict, istream& words, unsigned int num_words);
+    int static load_dict(DictionaryHashtable& dict, istream& words, unsigned int num_words);
     
     
     /*
@@ -79,7 +79,7 @@ public:
     /*
      * Load num_words from words stream into the dictionary
      */
-    void static load_dict(DictionaryTrie& dict, istream& words, unsigned int num_words);
+    int static load_dict(DictionaryTrie& dict, istream& words, unsigned int num_words);
     
     /*
      *Load words in the file into the vector

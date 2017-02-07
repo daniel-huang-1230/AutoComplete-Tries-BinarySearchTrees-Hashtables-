@@ -46,14 +46,16 @@ int main(int argc, char* argv[]) {
         
         Timer timer;
         ifstream in(dictfile);
+       
+        
         in.seekg(0, in.beg); //reset the istream to the start
         
+        int errorCode=Utils::load_dict(*bst, in, min_size + i*step_size);
         
-        Utils::load_dict(*bst, in, min_size + i*step_size);
-        //handle the edge case where the dictionary size is smaller than
-        //min_size+i*step_size
-        
-        
+        if(errorCode!=0){
+            break; //to handle the edge case where the dictionary size is smaller
+            
+        }
         std::vector<std::string> vec;
         Utils::load_vector(vec, in, 500); //load the next 500 words into a vector
         
@@ -94,10 +96,16 @@ int main(int argc, char* argv[]) {
         
         Timer timer;
         ifstream in(dictfile);
+        
+        
         in.seekg(0, in.beg); //reset the istream to the start
         
+
+        int errorCode= Utils::load_dict(*htb, in, min_size + i*step_size);
         
-        Utils::load_dict(*htb, in, min_size + i*step_size);
+        if(errorCode!=0){
+            break; //to handle the edge case where the dictionary size is smaller
+        }
         
         std::vector<std::string> vec;
         Utils::load_vector(vec, in, 500); //load the next 500 words into a vector
@@ -137,10 +145,16 @@ int main(int argc, char* argv[]) {
         
         Timer timer;
         ifstream in(dictfile);
+        
+        
         in.seekg(0, in.beg); //reset the istream to the start
+
+        int errorCode=Utils::load_dict(*trie, in, min_size + i*step_size);
         
-        
-        Utils::load_dict(*trie, in, min_size + i*step_size);
+        if(errorCode!=0){
+            break; //to handle the edge case where the dictionary size is smaller
+        }
+
         
         std::vector<std::string> vec;
         Utils::load_vector(vec, in, 500); //load the next 500 words into a vector

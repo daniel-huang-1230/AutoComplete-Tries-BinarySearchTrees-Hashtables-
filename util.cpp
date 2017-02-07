@@ -112,18 +112,20 @@ void Utils::load_dict(DictionaryBST& dict, istream& words)
  * Load num_words words from the stream, words, into the BST-backed 
  * dictionary, dict.
  */
-void Utils::load_dict(DictionaryBST& dict, istream& words, unsigned int num_words)
+int Utils::load_dict(DictionaryBST& dict, istream& words, unsigned int num_words)
 {
     string line = "";
     for (unsigned int i = 0; i < num_words; i++) {
         getline(words, line);
         if (words.eof()) {
             std::cout << "Warning!  Only " << i << " words read from file." << endl;
-            break;
+            
+            return -1;
         }
         Utils::stripFrequency(line);
         dict.insert(line);
     }
+    return 0;
 }
 
 /* 
@@ -147,18 +149,20 @@ void Utils::load_dict(DictionaryHashtable& dict, istream& words)
  * Load num_words words from the stream, words, into the Hashtable-backed 
  * dictionary, dict.
  */
-void Utils::load_dict(DictionaryHashtable& dict, istream& words, unsigned int num_words)
+int Utils::load_dict(DictionaryHashtable& dict, istream& words, unsigned int num_words)
 {
     string line = "";
     for (unsigned int i = 0; i < num_words; i++) {
         getline(words, line);
         if (words.eof()) {
             std::cout << "Warning!  Only " << i << " words read from file." << endl;
-            break;
+            
+            return -1;
         }
         Utils::stripFrequency(line);
         dict.insert(line);
     }
+    return 0;
 }
 
 /* 
@@ -182,16 +186,18 @@ void Utils::load_dict(DictionaryHashtable& dict, istream& words, unsigned int nu
  * Load num_words words from the stream, words, into the Trie-backed 
  * dictionary, dict.
  */
-void Utils::load_dict(DictionaryTrie& dict, istream& words, unsigned int num_words)
+int Utils::load_dict(DictionaryTrie& dict, istream& words, unsigned int num_words)
 {
     string line = "";
     for (unsigned int i = 0; i < num_words; i++) {
         getline(words, line);
         if (words.eof()) {
             std::cout << "Warning!  Only " << i << " words read from file." << endl;
-            break;
+            
+            return -1;
         }
         unsigned int freq = Utils::stripFrequency(line);
         dict.insert(line, freq);
     }
+    return 0;
 }
