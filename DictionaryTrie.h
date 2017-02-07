@@ -53,9 +53,9 @@ public:
     // the children vector
     
     std::string wordStr=""; //used to keep track of the concatenation of characters
-                            
     
-
+    
+    
     
     
 private:
@@ -65,7 +65,7 @@ private:
     
     int freq=0; //initialize the frequency to 0
     
-     vector<Node*> children; //use vector to store all the children nodes
+    vector<Node*> children; //use vector to store all the children nodes
     //in order to keep track of all the edges pointing from one node
     
 };
@@ -73,46 +73,46 @@ private:
 class DictionaryTrie
 {
 public:
-
-  /* Create a new Dictionary that uses a Trie back end */
-  DictionaryTrie();
-
-  /* Insert a word with its frequency into the dictionary.
-   * Return true if the word was inserted, and false if it
-   * was not (i.e. it was already in the dictionary or it was
-   * invalid (empty string) */
-  bool insert(std::string word, unsigned int freq);
-
-  /* Return true if word is in the dictionary, and false otherwise */
-  bool find(std::string word) const;
-
-   
-  /* Return up to num_completions of the most frequent completions
-   * of the prefix, such that the completions are words in the dictionary.
-   * These completions should be listed from most frequent to least.
-   * If there are fewer than num_completions legal completions, this
-   * function returns a vector with as many completions as possible.
-   * If no completions exist, then the function returns a vector of size 0.
-   * The prefix itself might be included in the returned words if the prefix
-   * is a word (and is among the num_completions most frequent completions
-   * of the prefix)
-   */
-  std::vector<std::string>
-  predictCompletions(std::string prefix, unsigned int num_completions);
-
-  /* Destructor */
-  ~DictionaryTrie();
-
-   void  deleteAll(Node* n); //helper method for destructor
+    
+    /* Create a new Dictionary that uses a Trie back end */
+    DictionaryTrie();
+    
+    /* Insert a word with its frequency into the dictionary.
+     * Return true if the word was inserted, and false if it
+     * was not (i.e. it was already in the dictionary or it was
+     * invalid (empty string) */
+    bool insert(std::string word, unsigned int freq);
+    
+    /* Return true if word is in the dictionary, and false otherwise */
+    bool find(std::string word) const;
+    
+    
+    /* Return up to num_completions of the most frequent completions
+     * of the prefix, such that the completions are words in the dictionary.
+     * These completions should be listed from most frequent to least.
+     * If there are fewer than num_completions legal completions, this
+     * function returns a vector with as many completions as possible.
+     * If no completions exist, then the function returns a vector of size 0.
+     * The prefix itself might be included in the returned words if the prefix
+     * is a word (and is among the num_completions most frequent completions
+     * of the prefix)
+     */
+    std::vector<std::string>
+    predictCompletions(std::string prefix, unsigned int num_completions);
+    
+    /* Destructor */
+    ~DictionaryTrie();
+    
+    void  deleteAll(Node* n); //helper method for destructor
     
 private:
-  // Add your own data members and methods here
+    // Add your own data members and methods here
     Node* root; //node pointer pointing to the root
     
     
     void DFS(Node* start,std::set<std::pair<unsigned int,std::string>> &freqSet);
-      
-    };
+    
+};
 
 
 

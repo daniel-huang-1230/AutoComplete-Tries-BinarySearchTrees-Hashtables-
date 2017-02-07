@@ -21,100 +21,100 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
-
-  //Initialize words
-  vector<std::string> words;
-  vector<string>::iterator wit;
-  vector<string>::iterator wen;
-  //initialize nonwords
-  set<string> nope;
-  set<string>::iterator nit;
-  set<string>::iterator nen;
-
-  //Initialize data structures
-  DictionaryBST d_bst;
-  DictionaryHashtable d_ht;
-  DictionaryTrie dt;
-  int t_bst, t_ht, tt;
-
-  words.push_back("harry");
-  words.push_back("sriram");
-  words.push_back("cse");
-  words.push_back("crucio");
-  words.push_back("autocomplete");
-  
-  
-  cout << "Inserting into Dictionaries..." << endl;
-
-  wit = words.begin();
-  wen = words.end();
-  for(; wit != wen; ++wit)
+    
+    //Initialize words
+    vector<std::string> words;
+    vector<string>::iterator wit;
+    vector<string>::iterator wen;
+    //initialize nonwords
+    set<string> nope;
+    set<string>::iterator nit;
+    set<string>::iterator nen;
+    
+    //Initialize data structures
+    DictionaryBST d_bst;
+    DictionaryHashtable d_ht;
+    DictionaryTrie dt;
+    int t_bst, t_ht, tt;
+    
+    words.push_back("harry");
+    words.push_back("sriram");
+    words.push_back("cse");
+    words.push_back("crucio");
+    words.push_back("autocomplete");
+    
+    
+    cout << "Inserting into Dictionaries..." << endl;
+    
+    wit = words.begin();
+    wen = words.end();
+    for(; wit != wen; ++wit)
     {
-      cout << "Inserting: \"" << *wit << "\"... ";
-      t_bst = d_bst.insert(*wit);
-      t_ht = d_ht.insert(*wit);
-      tt = dt.insert(*wit, 1);
-      //cout << t_bst << " " << t_ht << " "<< tt << "... ";
-      if(!t_bst)
-	{
-	  cout << "failed for DictionaryBST... ";
-	}
-      if(!t_ht)
-	{
-	  cout << "failed for DictionaryHashset... ";
-	}
-      if(!tt)
-	{
-	  cout << "failed for DictionaryTrie... ";
-	}
-      if(t_bst && t_ht && tt)
-	{
-	  cout << "PASSED! :D ";
-	}
-      cout << endl;
+        cout << "Inserting: \"" << *wit << "\"... ";
+        t_bst = d_bst.insert(*wit);
+        t_ht = d_ht.insert(*wit);
+        tt = dt.insert(*wit, 1);
+        //cout << t_bst << " " << t_ht << " "<< tt << "... ";
+        if(!t_bst)
+        {
+            cout << "failed for DictionaryBST... ";
+        }
+        if(!t_ht)
+        {
+            cout << "failed for DictionaryHashset... ";
+        }
+        if(!tt)
+        {
+            cout << "failed for DictionaryTrie... ";
+        }
+        if(t_bst && t_ht && tt)
+        {
+            cout << "PASSED! :D ";
+        }
+        cout << endl;
     }
-
-  cout << endl << "Re-inserting elements that were just inserted into Dictionaries..." << endl;
-
-  wit = words.begin();
-  wen = words.end();
-  for(; wit != wen; ++wit)
+    
+    cout << endl << "Re-inserting elements that were just inserted into Dictionaries..." << endl;
+    
+    wit = words.begin();
+    wen = words.end();
+    for(; wit != wen; ++wit)
     {
-      cout << "Inserting: \"" << *wit << "\"... ";
-      t_bst = d_bst.insert(*wit);
-      t_ht = d_ht.insert(*wit);
-      tt = dt.insert(*wit, 0);
-      if(t_bst)
+        cout << "Inserting: \"" << *wit << "\"... ";
+        t_bst = d_bst.insert(*wit);
+        t_ht = d_ht.insert(*wit);
+        tt = dt.insert(*wit, 0);
+        if(t_bst)
         {
-          cout << "failed for DictionaryBST... ";
+            cout << "failed for DictionaryBST... ";
         }
-      if(t_ht)
+        if(t_ht)
         {
-          cout << "failed for DictionaryHashset... ";
+            cout << "failed for DictionaryHashset... ";
         }
-      if(tt)
+        if(tt)
         {
-          cout << "failed for DictionaryTrie... ";
+            cout << "failed for DictionaryTrie... ";
         }
-      if(!t_bst && !t_ht && !tt)
+        if(!t_bst && !t_ht && !tt)
         {
-          cout << "PASSED! :D ";
+            cout << "PASSED! :D ";
         }
-      cout << endl;
+        cout << endl;
     }
-
-  cout << endl;
-
-  
-/*You are supposed to add more test cases in this file */
-
+    
+    cout << endl;
+    
+    
+    /*You are supposed to add more test cases in this file */
+    
     //test inserting empty world
     t_bst = d_bst.insert("");
     t_ht = d_ht.insert("");
     tt = dt.insert("", 0);
     
     //should not be inserted into any of these data structures
-        if(tt)
+    if(tt)
     {
         cout << "failed for DictionaryTrie... ";
     }
@@ -123,16 +123,16 @@ int main(int argc, char** argv)
         cout << "PASSED the check for inserting empty string into Trie :D ";
         cout << endl;
     }
-
+    
     
     //corner case where there is only one word in the dictionary
     DictionaryBST d_bst2;
     DictionaryHashtable d_ht2;
     DictionaryTrie dt2;
     if(d_bst2.find("apple"))
-       {
-           cout<<"the dictionary should be empty"<<endl;
-       }
+    {
+        cout<<"the dictionary should be empty"<<endl;
+    }
     
     if(d_ht2.find("apple"))
     {
@@ -144,10 +144,10 @@ int main(int argc, char** argv)
     }
     
     cout<<"Passed the empty dictionary test :D"<<endl;
-   
-   
+    
+    
     //test the find() function with a small set of words
-
+    
     vector<std::string> words2;
     words2.push_back("Daniel");
     words2.push_back("Johnny");
@@ -177,12 +177,12 @@ int main(int argc, char** argv)
         if(t_bst && t_ht && tt)
         {
             cout<< "inserting "<<*wit<< " success!"<<endl;
-                   }
+        }
         cout << endl;
     }
     
     cout << "Now proceed to test find()! :D "<<endl;
-
+    
     wit = words2.begin();
     wen = words2.end();
     for(;wit!=wen;++wit){
@@ -204,7 +204,7 @@ int main(int argc, char** argv)
         }
         cout<<endl;
     }
-
+    
     //test for inserting empty string and searching for empty string
     if(d_bst.insert("")||d_ht.insert("")||dt.insert("",0)){
         cout<< "Failed to identify the case of inserting empty string"<<endl;
@@ -223,8 +223,8 @@ int main(int argc, char** argv)
     cout<<endl;
     
     
-
-   
+    
+    
     
     //first test with a small group of words
     DictionaryTrie dict =DictionaryTrie();
@@ -246,12 +246,12 @@ int main(int argc, char** argv)
     
     //use the util.cpp functions to load dictionarys to my data structures
     DictionaryTrie dict2 =DictionaryTrie();
-
-  
+    
+    
     
     ifstream in("smalldictionary.txt");
     
-   
+    
     Utils::load_dict(dict2, in); //load the words from the file stream to dict2
     
     in.seekg(0, in.beg);
@@ -262,7 +262,7 @@ int main(int argc, char** argv)
     }
     cout<<"Testing auto-complete with smalldictionary.txt success! :D"<<endl;
     
-
     
-  return 0;
+    
+    return 0;
 }

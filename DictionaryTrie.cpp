@@ -47,7 +47,7 @@ bool DictionaryTrie::insert(std::string word, unsigned int freq)
     for(int i=0;i<word.length();i++) {
         Node* child = curr->findChild(word[i]);
         if(child!=NULL){ //the character is already in the  dictionary
-        
+            
             curr=child; //traverse to the child node
             
         }
@@ -150,16 +150,16 @@ std::vector<std::string> DictionaryTrie::predictCompletions(std::string prefix, 
         return vec;
     }
     
-        for(int i=0; i<prefix.length();i++){
-            
-            Node* temp=curr->findChild(prefix[i]);
-           if(temp==NULL){
-                //if the character in the prefix is not in the dictionary trie
-                cout<<"Invalid Input. Please retry with correct input"<<endl;
-                return vec;
-            }
-            curr=temp; //update the curr node
+    for(int i=0; i<prefix.length();i++){
+        
+        Node* temp=curr->findChild(prefix[i]);
+        if(temp==NULL){
+            //if the character in the prefix is not in the dictionary trie
+            cout<<"Invalid Input. Please retry with correct input"<<endl;
+            return vec;
         }
+        curr=temp; //update the curr node
+    }
     
     //now we've travered to the last character of the prefix, ready to search
     //for completions
@@ -179,11 +179,11 @@ std::vector<std::string> DictionaryTrie::predictCompletions(std::string prefix, 
     
     
     if(freqSet.size()<num_completions) {  //if there are fewer completions than
-                                          //num_completions
+        //num_completions
         for(int i=0; i<freqSet.size();i++) {
             vec.push_back((*ite).second);
             ite ++;
-                    }
+        }
         
     }
     
@@ -194,11 +194,11 @@ std::vector<std::string> DictionaryTrie::predictCompletions(std::string prefix, 
             ite ++;
         }
     }
-   
-       
+    
+    
     return vec; //return the final vector containing the words with top n_complemetion
     //frequencies
-
+    
 }
 
 
