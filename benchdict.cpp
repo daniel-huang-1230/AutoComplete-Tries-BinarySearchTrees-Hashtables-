@@ -79,8 +79,8 @@ int main(int argc, char* argv[]) {
         
         long long average=totalTime/MULTIPLERUNS; //calculate the average
         
-        cout<<average<<endl;
-        //cout<<min_size+i*step_size<<"\t"<<average<<endl; //print out the average time
+        
+        cout<<min_size+i*step_size<<"\t"<<average<<endl; //print out the average time
         cout<<endl;
         
         delete bst; //delete the dictionary to free up memory
@@ -132,8 +132,8 @@ int main(int argc, char* argv[]) {
         long long average=totalTime/MULTIPLERUNS; //calculate the average
         
         
-        cout<<average<<endl;
-        //cout<<min_size+i*step_size<<"\t"<<average<<endl; //print out the average time
+       
+        cout<<min_size+i*step_size<<"\t"<<average<<endl; //print out the average time
         cout<<endl;
         
         delete htb; //delete the dictionary to free up memory
@@ -182,9 +182,9 @@ int main(int argc, char* argv[]) {
         
         long long average=totalTime/MULTIPLERUNS; //calculate the average
         
-        cout<<average<<endl;
+       
 
-        //cout<<min_size+i*step_size<<"\t"<<average<<endl; //print out the average time
+        cout<<min_size+i*step_size<<"\t"<<average<<endl; //print out the average time
         cout<<endl;
         
         delete trie; //delete the dictionary to free up memory
