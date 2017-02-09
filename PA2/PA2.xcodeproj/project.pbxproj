@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C0BCE511E36E8FF00CC7C72 /* DictionaryBST.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BCE4F1E36E8FF00CC7C72 /* DictionaryBST.cpp */; };
+		4C021F131E4C3E9400F7A613 /* benchhash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C021F121E4C3E9400F7A613 /* benchhash.cpp */; };
 		4C0BCE531E36F25600CC7C72 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BCE521E36F25600CC7C72 /* test.cpp */; };
 		4C0BCE5B1E36FB5100CC7C72 /* DictionaryTrie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BCE561E36FB5100CC7C72 /* DictionaryTrie.cpp */; };
 		4C5DAFF81E3C2BC400BD06E3 /* DictionaryHashtable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C5DAFF41E3C2BC400BD06E3 /* DictionaryHashtable.cpp */; };
@@ -28,9 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4C021F121E4C3E9400F7A613 /* benchhash.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = benchhash.cpp; path = ../../benchhash.cpp; sourceTree = "<group>"; };
 		4C0BCE451E36E8E200CC7C72 /* PA2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PA2; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C0BCE4F1E36E8FF00CC7C72 /* DictionaryBST.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DictionaryBST.cpp; path = ../../DictionaryBST.cpp; sourceTree = "<group>"; };
-		4C0BCE501E36E8FF00CC7C72 /* DictionaryBST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DictionaryBST.h; path = ../../DictionaryBST.h; sourceTree = "<group>"; };
 		4C0BCE521E36F25600CC7C72 /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = test.cpp; path = ../../test.cpp; sourceTree = "<group>"; };
 		4C0BCE561E36FB5100CC7C72 /* DictionaryTrie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DictionaryTrie.cpp; path = ../../DictionaryTrie.cpp; sourceTree = "<group>"; };
 		4C0BCE571E36FB5100CC7C72 /* DictionaryTrie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DictionaryTrie.h; path = ../../DictionaryTrie.h; sourceTree = "<group>"; };
@@ -71,6 +70,7 @@
 		4C0BCE471E36E8E200CC7C72 /* PA2 */ = {
 			isa = PBXGroup;
 			children = (
+				4C021F121E4C3E9400F7A613 /* benchhash.cpp */,
 				4CE8AD381E485D5C00BE2E98 /* benchdict.cpp */,
 				4C0BCE561E36FB5100CC7C72 /* DictionaryTrie.cpp */,
 				4C0BCE571E36FB5100CC7C72 /* DictionaryTrie.h */,
@@ -79,8 +79,6 @@
 				4C5DAFF61E3C2BC400BD06E3 /* util.cpp */,
 				4C5DAFF41E3C2BC400BD06E3 /* DictionaryHashtable.cpp */,
 				4C5DAFF51E3C2BC400BD06E3 /* DictionaryHashtable.h */,
-				4C0BCE4F1E36E8FF00CC7C72 /* DictionaryBST.cpp */,
-				4C0BCE501E36E8FF00CC7C72 /* DictionaryBST.h */,
 			);
 			path = PA2;
 			sourceTree = "<group>";
@@ -142,9 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C0BCE511E36E8FF00CC7C72 /* DictionaryBST.cpp in Sources */,
 				4C0BCE5B1E36FB5100CC7C72 /* DictionaryTrie.cpp in Sources */,
 				4C5DAFF81E3C2BC400BD06E3 /* DictionaryHashtable.cpp in Sources */,
+				4C021F131E4C3E9400F7A613 /* benchhash.cpp in Sources */,
 				4C5DAFF91E3C2BC400BD06E3 /* util.cpp in Sources */,
 				4CE8AD391E485D5C00BE2E98 /* benchdict.cpp in Sources */,
 				4C0BCE531E36F25600CC7C72 /* test.cpp in Sources */,

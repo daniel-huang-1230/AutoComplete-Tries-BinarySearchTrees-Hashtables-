@@ -9,6 +9,13 @@ using std::istringstream;
 using std::string;
 using std::vector;
 
+/**
+ * Name: Daniel Huang
+ * Date: 2/06/2017
+ * Assignment: PA2
+ */
+
+
 /*
  * Starts the timer. Saves the current time.
  */
