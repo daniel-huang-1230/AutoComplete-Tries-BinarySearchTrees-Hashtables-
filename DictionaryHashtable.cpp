@@ -5,7 +5,7 @@
  * Name: Daniel Huang
  * Date: 1/23/2017
  * Assignment: PA2
- * This file contains the implementation of a dictionary, using the hash table 
+ * This file contains the implementation of a dictionary, using the hash table
  * as the backing data structure
  */
 
@@ -20,7 +20,7 @@ bool DictionaryHashtable::insert(std::string word)
     if(word==""){
         return false; //if inserting empty string, return false
     }
-     return get<1>(dict.insert(word)); //get the bool value from the pair and return
+    return get<1>(dict.insert(word)); //get the bool value from the pair and return
 }
 
 /* Return true if word is in the dictionary, and false otherwise */
@@ -31,7 +31,7 @@ bool DictionaryHashtable::find(std::string word) const
         
     }
     return false; //word not found in the dictionary
-
+    
 }
 
 /* Destructor */

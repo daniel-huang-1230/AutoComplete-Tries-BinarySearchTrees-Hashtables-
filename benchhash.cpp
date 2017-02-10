@@ -46,6 +46,9 @@ unsigned int hashFunc2(const std::string& key, int size)
     return hash%size;
 }
 
+/*
+ The main function that drives the benchhash program
+ */
 int main(int argc, char* argv[]){
     /* cout<<"testing the first hash function"<<endl;
      
