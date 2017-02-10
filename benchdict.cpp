@@ -46,7 +46,7 @@ int main(int argc, char* argv[]) {
         
         Timer timer;
         ifstream in(dictfile);
-       
+        
         
         in.seekg(0, in.beg); //reset the istream to the start
         
@@ -101,7 +101,7 @@ int main(int argc, char* argv[]) {
         
         in.seekg(0, in.beg); //reset the istream to the start
         
-
+        
         int errorCode= Utils::load_dict(*htb, in, min_size + i*step_size);
         
         if(errorCode!=0){
@@ -132,13 +132,13 @@ int main(int argc, char* argv[]) {
         long long average=totalTime/MULTIPLERUNS; //calculate the average
         
         
-       
+        
         cout<<min_size+i*step_size<<"\t"<<average<<endl; //print out the average time
         cout<<endl;
         
         delete htb; //delete the dictionary to free up memory
     }
-
+    
     
     cout<<"DictionaryTrie"<<endl;
     cout<<endl;
@@ -151,13 +151,13 @@ int main(int argc, char* argv[]) {
         
         
         in.seekg(0, in.beg); //reset the istream to the start
-
+        
         int errorCode=Utils::load_dict(*trie, in, min_size + i*step_size);
         
         if(errorCode!=0){
             break; //to handle the edge case where the dictionary size is smaller
         }
-
+        
         
         std::vector<std::string> vec;
         Utils::load_vector(vec, in, 500); //load the next 500 words into a vector
@@ -182,14 +182,14 @@ int main(int argc, char* argv[]) {
         
         long long average=totalTime/MULTIPLERUNS; //calculate the average
         
-       
-
+        
+        
         cout<<min_size+i*step_size<<"\t"<<average<<endl; //print out the average time
         cout<<endl;
         
         delete trie; //delete the dictionary to free up memory
     }
-
+    
     
     
     
