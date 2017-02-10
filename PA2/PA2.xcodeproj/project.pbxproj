@@ -12,6 +12,7 @@
 		4C0BCE5B1E36FB5100CC7C72 /* DictionaryTrie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BCE561E36FB5100CC7C72 /* DictionaryTrie.cpp */; };
 		4C5DAFF81E3C2BC400BD06E3 /* DictionaryHashtable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C5DAFF41E3C2BC400BD06E3 /* DictionaryHashtable.cpp */; };
 		4C5DAFF91E3C2BC400BD06E3 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C5DAFF61E3C2BC400BD06E3 /* util.cpp */; };
+		4C622D451E4C52AA00425A04 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 4C622D441E4C52AA00425A04 /* Makefile */; };
 		4CE8AD391E485D5C00BE2E98 /* benchdict.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CE8AD381E485D5C00BE2E98 /* benchdict.cpp */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		4C5DAFF51E3C2BC400BD06E3 /* DictionaryHashtable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DictionaryHashtable.h; path = ../../DictionaryHashtable.h; sourceTree = "<group>"; };
 		4C5DAFF61E3C2BC400BD06E3 /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = util.cpp; path = ../../util.cpp; sourceTree = "<group>"; };
 		4C5DAFF71E3C2BC400BD06E3 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = util.h; path = ../../util.h; sourceTree = "<group>"; };
+		4C622D441E4C52AA00425A04 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; name = Makefile; path = ../../Makefile; sourceTree = "<group>"; };
 		4CE8AD381E485D5C00BE2E98 /* benchdict.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = benchdict.cpp; path = ../../benchdict.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +72,7 @@
 		4C0BCE471E36E8E200CC7C72 /* PA2 */ = {
 			isa = PBXGroup;
 			children = (
+				4C622D441E4C52AA00425A04 /* Makefile */,
 				4C021F121E4C3E9400F7A613 /* benchhash.cpp */,
 				4CE8AD381E485D5C00BE2E98 /* benchdict.cpp */,
 				4C0BCE561E36FB5100CC7C72 /* DictionaryTrie.cpp */,
@@ -145,6 +148,7 @@
 				4C021F131E4C3E9400F7A613 /* benchhash.cpp in Sources */,
 				4C5DAFF91E3C2BC400BD06E3 /* util.cpp in Sources */,
 				4CE8AD391E485D5C00BE2E98 /* benchdict.cpp in Sources */,
+				4C622D451E4C52AA00425A04 /* Makefile in Sources */,
 				4C0BCE531E36F25600CC7C72 /* test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
