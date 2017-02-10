@@ -44,7 +44,7 @@ unsigned int hashFunc2(const std::string& key, int size)
 }
 
 int main(int argc, char* argv[]){
-    cout<<"testing the first hash function"<<endl;
+   /* cout<<"testing the first hash function"<<endl;
     
     //print them all out and verify the hash values by hand
     string s1="APPLE";
@@ -66,6 +66,17 @@ int main(int argc, char* argv[]){
     
     
     cout<< hashFunc2(s3, 10)<<endl;
+    
+    cout<<endl;
+    */
+    
+    std::string str(argv[1]);
+    std::string& dictfile=str;
+    unsigned int num_words = atoi(argv[2]);
+    
+    //start simulating inserting words from dictionary to a hash table and benchmarking
+    
+    
     
     
     
