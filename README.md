@@ -1,7 +1,7 @@
 # Project Overview
 This is my second personal assignment in the course **Advanced Data Structure** ( CSE 100 ) from **UC San Diego** 
 
-What I did: 
+What I learned: 
 
 1.Implement either a **multi-way trie (MWT)** or **ternary search tree (TST)** data structure for strings ( I ended up using
   **MWT** in my implementation )
