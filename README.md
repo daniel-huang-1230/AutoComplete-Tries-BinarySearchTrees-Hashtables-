@@ -433,3 +433,6 @@ https://en.wiktionary.org/wiki/Wiktionary:Frequency_lists#Top_English_words_list
 http://www.becomeawordgameexpert.com/dictionary.htm
 
 Because we need to cite them to not be sued.
+
+# Author
+ [@Daniel](https://www.linkedin.com/in/daniel-huang-443546115/)
