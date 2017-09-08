@@ -3,7 +3,7 @@ This is my second personal assignment in the course **Advanced Data Structure** 
 
 What I did: 
 1.Implement either a **multi-way trie (MWT)** or **ternary search tree (TST)** data structure for strings ( I ended up using
-  **MWT**
+  **MWT** in my implementation )
 
 2.Implement auto-complete functionality seen in almost all text-based applications these days.
 
