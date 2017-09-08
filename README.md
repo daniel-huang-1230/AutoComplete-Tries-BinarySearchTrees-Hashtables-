@@ -13,6 +13,8 @@ What I did:
 
 4.Research and compare the performance of different hash functions for strings
 
+**NOTE**: We were allowed to either team up with other students or try to complete the project alone. I chose to go **solo**.
+
 # Language 
    The program is written in **C++**
 
