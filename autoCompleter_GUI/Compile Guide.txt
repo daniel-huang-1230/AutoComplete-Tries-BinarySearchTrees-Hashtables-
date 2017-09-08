@@ -1,0 +1,28 @@
+Project: autoCompleter_GUI (https://github.com/flyfire2002/autoCompleter_GUI)
+	 (Forked from https://github.com/cwscx/autoCompleter_GUI)
+	 
+Authors: Galen Krulce,
+	 Shengyang 'Raymond' Shi,
+         Huajie 'Ajax' Wu,
+         Huayin 'Becky' Zhou
+         
+What does this do?
+	An GUI for UCSD Winter 2016 CSE 100 PA3. It mimics a search bar with 
+	autocomplete functionality (which will be implemented by students)
+	
+How to compile?
+	Linux: 
+		Once inside the GUI file's folder (where AutoCreator.pro resides)
+		> qmake AutoCreator.pro 
+			# Note to class users: Version of Qt matters. 
+			# Use the one in /software/common64/qt-5.5.0/bin
+    		> make
+    		
+    	Windows:
+    		Assuming you are using a Qt with MinGW, run 
+    		> mingw32-make
+		instead of make.
+		
+		On my Windows system I had to move a couple .dll-s from Qt's bin
+		folder to where the binaries are. Not sure if we need 
+		this step for Mac. -- Huajie
