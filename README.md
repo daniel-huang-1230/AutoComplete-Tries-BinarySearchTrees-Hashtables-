@@ -14,7 +14,7 @@ What I did:
 4.Research and compare the performance of different hash functions for strings
 
 # Language 
-  **C++**
+   The program is written in **C++**
 
 # Instructions below are copied from the original [assignment page](https://sites.google.com/a/eng.ucsd.edu/cse-100-winter-2017/assignments/assignment-2-auto-complete) 
 
